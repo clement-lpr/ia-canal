@@ -1,0 +1,50 @@
+<h1 mat-dialog-title class="bg-blue-800 !text-white">{{ movie?.title }}</h1>
+<div mat-dialog-content class="!grid !grid-rows-3 !grid-flow-col !gap-4">
+  <mat-form-field>
+    <mat-label>Revenus US</mat-label>
+    <input matInput disabled [(ngModel)]="movie!.usGross" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Vente DVD US</mat-label>
+    <input matInput disabled [(ngModel)]="movie!.usDvdSales" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Revenu mondial</mat-label>
+    <input matInput disabled [(ngModel)]="movie!.worldwideGross" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Budget de production</mat-label>
+    <input matInput disabled [(ngModel)]="movie!.productionBudget" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Date de diffusion</mat-label>
+    <input matInput disabled [(ngModel)]="movie!.releaseDate" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Distributeur</mat-label>
+    <input matInput disabled [(ngModel)]="movie!.distributor" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Notes IMDB</mat-label>
+    <input matInput disabled [(ngModel)]="movie!.imdbRating" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Nombre de votes IMDB</mat-label>
+    <input matInput disabled [(ngModel)]="movie!.votes" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Genre</mat-label>
+    <input matInput disabled [(ngModel)]="movie!.genre" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Réalisateur</mat-label>
+    <input matInput disabled [(ngModel)]="movie!.director" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Note Rotten Tomatoes</mat-label>
+    <input matInput disabled [(ngModel)]="movie!.rotenRating" />
+  </mat-form-field>
+</div>
+<mat-dialog-actions align="center">
+  <button mat-button mat-dialog-close>Fermer</button>
+</mat-dialog-actions>

@@ -1,0 +1,48 @@
+<div class="flex flex-col mat-elevation-z8">
+  <mat-table #table [dataSource]="dataSource" class="!h-[550px]" matSort>
+    <ng-container matColumnDef="title">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Titre </mat-header-cell>
+      <mat-cell *matCellDef="let element" class="font-semibold"> {{ element.title }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="rotenRating" class="flex flex-1">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Note Rotten Tomatoes </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.rotenRating }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="imdbRating">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Note IMDB</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.imdbRating }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="votes">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Nombre de votes IMDB </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.votes }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="edit">
+      <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <button
+          mat-icon-button
+          [matTooltip]="'Détail du film ' + element.title"
+          class="iconbutton"
+          (click)="openDialog(element)"
+          color="primary"
+        >
+          <mat-icon>visibility</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </mat-table>
+
+  <mat-paginator
+    class="p-2"
+    [pageSize]="10"
+    [pageSizeOptions]="[5, 10, 20]"
+    showFirstLastButtons
+  ></mat-paginator>
+</div>

@@ -1,0 +1,28 @@
+<form data-test="search-form" [formGroup]="searchForm" class="flex justify-center gap-4">
+  <mat-form-field>
+    <mat-label>Filtrer les films</mat-label>
+    <input matInput type="text" formControlName="searchValue" placeholder="Rechercher" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Historique de recherche</mat-label>
+    <mat-select formControlName="searchHistory">
+      <mat-option *ngFor="let searchItem of searchHistory$ | async" [value]="searchItem">
+        {{ searchItem }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Films consultés</mat-label>
+    <mat-select formControlName="movieConsultationHistory">
+      <mat-option *ngFor="let movie of movieConsultationHistory$ | async" [value]="movie?.id">
+        {{ movie?.title }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button color="primary" mat-raised-button (click)="onLogout()" type="button">
+    se déconnecter
+  </button>
+</form>

@@ -1,0 +1,18 @@
+{
+  "trailingComma": "all",
+  "singleQuote": true,
+  "bracketSameLine": false,
+  "semi": true,
+  "printWidth": 100,
+  "tabWidth": 2,
+  "useTabs": false,
+  "endOfLine":"auto",
+  "overrides": [
+    {
+      "files": ["**/*.css", "**/*.scss", "**/*.html"],
+      "options": {
+        "singleQuote": false
+      }
+    }
+  ]
+}
